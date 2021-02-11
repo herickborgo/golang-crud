@@ -1,11 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
 	"rest-api/router"
 
+	"github.com/google/uuid"
 	"github.com/joho/godotenv"
 )
 
@@ -16,6 +18,7 @@ func checkError(err error) {
 }
 
 func main() {
+	fmt.Println(uuid.NewUUID())
 	err := godotenv.Load(os.Getenv("GOPATH") + "/src/rest-api/.env")
 	checkError(err)
 
